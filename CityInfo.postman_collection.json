@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "4b100756-ddc4-41bf-9af1-89cfaffe53c8",
+		"name": "CityInfo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12008597"
+	},
+	"item": [
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Belgrade\",\r\n    \"country\": \"Serbia\",\r\n    \"region\": \"Belgrade\",\r\n    \"population\": \"18000000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/city/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"city",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Test-123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoidXNlcm5hbWUiLCJleHAiOjE3MDIyMTY5MjksImlhdCI6MTcwMjIxMzMyOSwic2NvcGUiOiIifQ.eiGX56FyK_PFoHWy1-XD7milP9p9n5hjhXEEOivRTSLefAQY6fbN7PVM4mVzwUV1IEBifjxVN6EIS5qEiZ5nn3CQmqFBpMjdMka0mYr-uevDL5xGq6JlSeecfVuEHgEKFS39BboosJ0W2CZUBCs8rleG-AlUNTb-LlvnNquO8atdJGyn5X3QteF35hv1AHFUF-MdD3qBcZQa_CDfl5wUWzNpiqrjc-bH4jh0nKYGP-6ZxkRyvJM5pvgPW9Gf2QuE4_On73MJ7AfyxipR_yiSxVKybZnBAlPr9DeoFMbO-C9cY9lQEjX4J-ZNxQ2JHpOhBa0zXLwZSzx9KdIsCPUVVA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/city/getCity?cityName=Vienna",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"city",
+						"getCity"
+					],
+					"query": [
+						{
+							"key": "cityName",
+							"value": "Vienna"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoidXNlcm5hbWUiLCJleHAiOjE3MDIyMzAzNTEsImlhdCI6MTcwMjIyNjc1MSwic2NvcGUiOiIifQ.IbXIz2QySg-LsP0LByAbxvoz9s7BbO6jSKdudN4xZ60wPOMTWW-mc1fkY6T60weUZuzUG3Y5k8hGracrvLhBtWUMDglqJdS0CCuD8Nb8lSLOmpQyFo3Z-1KNfmvUlpN7hSAr8Do2qwd3eM5hZv24kqiwebahYqdVYQI--oZF4UHFMalqP_VhElp_QXk_YU2v1HwqfuFy7gclV7Ivz8pC1KTNdhgKLtzzcBu6EIOUGUx8a49uPEZKkHUW5Vw_2dCTf1WK8L9SbkQvsVJA-RyZ82sxOcnV4VvMAqBTJe9436rsdrZ2dBXecuB9Of-OxLvxCn4jGPRECZ94IAetKojEdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/city/deleteCity?cityName=Vranje",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"city",
+						"deleteCity"
+					],
+					"query": [
+						{
+							"key": "cityName",
+							"value": "Vranje"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoidXNlcm5hbWUiLCJleHAiOjE3MDIyMzAzNTEsImlhdCI6MTcwMjIyNjc1MSwic2NvcGUiOiIifQ.IbXIz2QySg-LsP0LByAbxvoz9s7BbO6jSKdudN4xZ60wPOMTWW-mc1fkY6T60weUZuzUG3Y5k8hGracrvLhBtWUMDglqJdS0CCuD8Nb8lSLOmpQyFo3Z-1KNfmvUlpN7hSAr8Do2qwd3eM5hZv24kqiwebahYqdVYQI--oZF4UHFMalqP_VhElp_QXk_YU2v1HwqfuFy7gclV7Ivz8pC1KTNdhgKLtzzcBu6EIOUGUx8a49uPEZKkHUW5Vw_2dCTf1WK8L9SbkQvsVJA-RyZ82sxOcnV4VvMAqBTJe9436rsdrZ2dBXecuB9Of-OxLvxCn4jGPRECZ94IAetKojEdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/city/updateCity?cityName=Belgrade&cityPopulation=1800000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"city",
+						"updateCity"
+					],
+					"query": [
+						{
+							"key": "cityName",
+							"value": "Belgrade"
+						},
+						{
+							"key": "cityPopulation",
+							"value": "1800000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
